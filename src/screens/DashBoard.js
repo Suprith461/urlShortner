@@ -37,7 +37,7 @@ const DashBoard = () => {
             <List>
                 {fetchUrlsPayload.map((value,index)=>(
                     <ListItem style={{width:'95vw'}}>
-                     <UrlListElement shortUrl={value.shortUrl} longUrl={value.longUrl} creationDate={value.creation_date} uid={value.creator_id} shortCode={value.shortCode}/>
+                     <UrlListElement shortUrl={value.shortUrl} longUrl={value.longUrl} creationDate={value.creation_date} uid={value.creator_id} shortCode={value.urlCode}/>
                      </ListItem>
                ))}
             </List>:null

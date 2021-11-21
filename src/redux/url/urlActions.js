@@ -62,6 +62,7 @@ export  function shortenUrl(data){
                  }
                 
              }catch(error){
+                 console.log(error,"shortenUrl")
                  dispatch(shortenUrlFailure(error.message))
              }
         }else{

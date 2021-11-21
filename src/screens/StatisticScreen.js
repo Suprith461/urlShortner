@@ -3,10 +3,10 @@ import {Paper} from '@material-ui/core'
 import DoughnutChart from './../components/DoughnutChart'
 import firebase from 'firebase'
 const StatisticScreen = (props) => {
-    //const {shortCode} = props.location.state
+    const {shortCode} = props.location.state
     
     
-    const shortCode = "suprith"
+    //const shortCode = "suprith"
     const [labels,setLables] = useState([]);
     const [data,setData] = useState([]);
     const [colors,setColors]=useState(['red',"green","blue","yellow","brown","cyan","black"])

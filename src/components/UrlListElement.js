@@ -23,7 +23,7 @@ const UrlListElement = ({creationDate,longUrl,shortUrl,uid,shortCode}) => {
                             <Typography variant="body2" color="initial" style={{marginLeft:'4vw'}}>{createdDate.toString()}</Typography>
                         </Grid>
                         <Grid conatiner> 
-                            <Link href={longUrl} style={{fontSize:'20px',paddingLeft:'4vw',display:'flex',alignSelf:'center',color:"black",overflow:false}}>
+                            <Link href={longUrl} style={{fontSize:'20px',paddingLeft:'4vw',display:'flex',alignSelf:'center',color:"black",textOverflow:'ellipsis'}}>
                                 {longUrl}
                             </Link>
                         </Grid>
@@ -31,7 +31,7 @@ const UrlListElement = ({creationDate,longUrl,shortUrl,uid,shortCode}) => {
                    </Grid>
                    
                    <Grid container style={{backgroundColor:'whitesmoke',display:'flex'}}>
-                      <Link href={shortUrl} style={{fontSize:'18px',paddingLeft:'4vw',display:'flex',alignSelf:'center'}}>
+                      <Link href={shortUrl} style={{fontSize:'18px',paddingLeft:'4vw',display:'flex',alignSelf:'center',textOverflow:'ellipsis'}}>
                         {shortUrl}
                       </Link>
                       

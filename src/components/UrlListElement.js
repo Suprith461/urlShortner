@@ -11,6 +11,7 @@ const UrlListElement = ({creationDate,longUrl,shortUrl,uid,shortCode}) => {
     console.log("test",creationDate,longUrl,shortUrl,uid,shortCode)
     const dispatch = useDispatch()
     const [redirect,setRedirect] = useState(false)
+    const [redirectStats,setRedirectStats] = useState(false)
     const createdDate = new Date(creationDate.seconds*1000)
     return (
         (!redirect)?<div style={{width:'95%'}}>
@@ -45,7 +46,7 @@ const UrlListElement = ({creationDate,longUrl,shortUrl,uid,shortCode}) => {
                         <DeleteIcon/>
                       </IconButton>
 
-                        <IconButton>
+                        <IconButton onClick={()=>setRedirectStats(true)}>
                             <EqualizerIcon/>
                         </IconButton>
                         </Box>
@@ -53,7 +54,7 @@ const UrlListElement = ({creationDate,longUrl,shortUrl,uid,shortCode}) => {
                    </Grid>
                </Grid>
                
-              
+              {redirectStats&&<Redirect to={{pathname:"/statistics",state:{shortCode:shortCode}}}/>}
                 
             </Paper>
         </div>:<Redirect to={{pathname:"/editurl",state:{creationDate:creationDate,longUrl:longUrl,shortUrl:shortUrl,uid:uid,shortCode:shortCode}}}/>

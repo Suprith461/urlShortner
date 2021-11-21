@@ -2,7 +2,7 @@ import { Box, Paper, Typography } from "@material-ui/core";
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
-const DoughnutChart = () => {
+const DoughnutChart = ({labels,data,backgroundColors,totalClicks}) => {
   return (
     <Paper
       variant="outlined"
@@ -14,17 +14,17 @@ const DoughnutChart = () => {
       </Typography>
       <Typography variant="h6">
         <Box fontWeight="fontWeightBold" marginBottom={3}>
-          36
+         {totalClicks}
         </Box>
       </Typography>
       <Doughnut
         data={{
-          labels: ["Task 1", "Task 2", "Task 3", "Task 4"],
+          labels: labels,
           datasets: [
             {
-              label: "# of tasks",
-              data: [2, 3, 2, 4],
-              backgroundColor: ["#CC397B", "#800080", "#2D3748", "#008DB9"],
+              label: "number of clicks",
+              data: data,
+              backgroundColor: backgroundColors,
             },
           ],
         }}
